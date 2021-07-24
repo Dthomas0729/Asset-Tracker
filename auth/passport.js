@@ -11,6 +11,16 @@ passport.use(
 
         (accessToken, refreshToken, profile, cb) => {
             console.log(profile);
+            return cb(null);
         }
     )
 )
+
+// passport.serializeUser((user, done) => {
+//     done(null, user.googleId||user.id);
+// });
+
+// passport.deserializeUser((googleId, done) => {
+
+//     done(null, user);
+// });
