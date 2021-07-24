@@ -9,6 +9,9 @@ require('./auth/passport');
 const PORT = 4000
 const app = express();
 
+const userRoute = require('./routes/users');
+
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(morgan('dev'));
@@ -25,6 +28,9 @@ app.use(
       saveUninitialized: true,
     })
   );
+
+app.use('/', userRoute);
+
 
 app.listen(PORT, (err) => {
     console.log(`We Are Live! Go Here ---> http://localhost:${PORT}`);
