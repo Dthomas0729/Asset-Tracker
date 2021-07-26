@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 
 const indexController = require('../controllers/index')
+const User = require('../models/user');
 
 router.get('/', (indexController.index));
 
@@ -16,7 +17,7 @@ router.get(
 router.get(
     "/oauth2callback",
     passport.authenticate("google", {
-        successRedirect: "/",
+        successRedirect: `/user`,
         failureRedirect: "/",
     })
   );
@@ -27,4 +28,11 @@ router.get("/logout", function (req, res) {
     res.redirect("/");
   });
 
-module.exports = router;
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/auth/google");
+}
+
+
+
+module.exports = {router, isLoggedIn};

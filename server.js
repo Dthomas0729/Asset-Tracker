@@ -11,7 +11,9 @@ require('./auth/database');
 const PORT = 4000
 const app = express();
 
-const idxRouter = require('./routes/index');
+const idxRouter = require('./routes/index').router;
+const userRouter = require('./routes/users');
+const assetsRouter = require('./routes/assets');
 
 
 app.set('view engine', 'ejs');
@@ -34,6 +36,8 @@ app.use(passport.session());
 
 
 app.use('/', idxRouter);
+app.use('/home', userRouter);
+app.use('/assets', assetsRouter);
 
 
 app.listen(PORT, (err) => {

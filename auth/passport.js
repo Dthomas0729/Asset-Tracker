@@ -12,7 +12,6 @@ passport.use(
         },
 
         (accessToken, refreshToken, profile, cb) => {
-            console.log(profile);
             User.findOne({ googleId: profile.id }, (err, user) => {
                 if (err) return cb(err);
                 if (user) {
@@ -39,7 +38,7 @@ passport.serializeUser(function (user, done) {
     done(null, user.id);
   });
 
-  passport.deserializeUser(function (id, done) {
+passport.deserializeUser(function (id, done) {
     User.findById(id, function (err, user) {
       done(err, user);
     });

@@ -3,5 +3,5 @@ module.exports = {
   };
 
 function index(req, res) {
-    res.render('users/index')
+    res.render('index')
   }
