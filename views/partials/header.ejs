@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asset Tracker</title>
-
+    <title><%= title %></title>
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 
@@ -18,6 +17,19 @@
         <a href="/assets">Assets</a>
         <a href="/auth/google">Login</a>
 
+        <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left">vpn_key</i>Login with Google</a
+            >
+            <% } %>
     </nav>
     
-    <main>
+<main>
+
+    <h1><%= title %></h1>
+
+    

@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" tracking="/assets/" method="POST">
+        <label>Assets List:</label>
+        <input type="text" name="assetslist">
+        <label>Create New Assets:</label>
+        <input type="text" name="createNewAssets">
+        <label>View Assets:</label>
+            <select name="viewAssets">
+            <option value="Type">Type</option>
+            <option value="Income">Income</option>
+            <option value="Expenses">Expenses</option>
+            <option value="ROI">ROI</option>
+            </select>
+        <label>Update Assets:</label>
+        <input type="checkbox" name="updateAssets" checked>
+        <input type="submit" value="Add">
+  </form>
+
+  <%- include('../partials/footer') %>
