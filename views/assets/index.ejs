@@ -1,10 +1,29 @@
 <%- include('../partials/header') %>
-    <form>
+
+    <!-- <form>
         <input type="text" />
         <input type="text" />
         <input type="text" />
         <button> submit </button>
-    </form>
+    </form> -->
+    <table id="list">
+        <thead>
+          <tr>
+            <th>assets</th>
+            <th>Assets <br>List</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% assets.forEach(function(m) { %>
+            <tr>
+              <td><%= m.assets %></td>
+              <td><%= m.assetslist %></td>
+              <td><a href="/assets/<%= m._id %>">DETAILS</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
 
 
 
