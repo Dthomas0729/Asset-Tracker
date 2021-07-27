@@ -1,6 +1,24 @@
+body {    
+    background-image: url(../images/wp2261019.webp);
+    background-size: cover;
+    margin: 0px
+}
+
 nav {
-    background-color: rgb(216, 137, 168);
+    background-color: transparent;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Quantico', sans-serif;
+}
+
+#nav-links {
+    align-self: center;
+}
+
+nav div {
+    display: flex;
+
 }
 
 nav a {
@@ -9,7 +27,7 @@ nav a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 nav h2 {
@@ -17,7 +35,9 @@ nav h2 {
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: underline;
+    font-size: 28px;
+
 }
 
 nav a:hover {
@@ -29,3 +49,23 @@ nav a.active {
     background-color: #04AA6D;
     color: white;
   }
+
+#user-page {
+    font-family: 'Quantico', sans-serif;
+    color: white;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 600px
+}
+
+#user-page div {
+    flex-direction: column;
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: flex-start;
+    align-self: auto;
+    align-items: center;
+
+}
