@@ -2,6 +2,8 @@ body {
     background-image: url(../images/wp2261019.webp);
     background-size: center;
     margin: 0;
+    padding: 36 24px;
+    margin-top: 10px;
 }
 
 /* NAVBAR STYLING BELOW */
@@ -69,7 +71,7 @@ nav div {
     padding: 14px 12px;
     background-color: inherit;
     font-family: inherit;
-    margin: .5px;
+    margin: 0;
   }
   
   .navbar a:hover, .subnav:hover .subnavbtn {
@@ -79,9 +81,9 @@ nav div {
   .subnav-content {
     display: none;
     position: absolute;
-    left: inline;
+    left: none;
     background-color: red;
-    width: 100%;
+    width: 75%;
     z-index: 1;
   }
   
@@ -101,11 +103,11 @@ nav div {
   }
 
   /* End */
-nav h2 {
+h2 {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 1px 2px;
+    padding: 1px 22px;
     text-decoration: none;
     font-size: 28px;
 
@@ -157,20 +159,21 @@ nav a.active {
     color: white;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 250px;
     align-items: center;
 }
 
 #create-asset-page {
     display: flex;
     justify-content: flex-start;
-    margin: 36px;
+    margin-top: 125px;
+
 }
 
 #new-form label {
-    color: white;
-    margin: 4px;
-    padding: 2px;
+    color: rgb(163, 153, 153);
+    margin: auto;
+    padding: 1px 4px;
     font-size: 24px;
 }
 
@@ -184,9 +187,15 @@ nav a.active {
     height: 24px;
 }
 
+.form-group{
+    padding: 14px 12px;
+    justify-content:flex-end;
+    margin-left: auto;
+}
+
 #new-form #submit {
-    font-size: 24px;
-    margin: 12px;
+    font-size: 18px;
+    margin: auto;
     padding: 8px 12px 8px 12px;
     border-radius: 8px;
     background-color: gray;
@@ -195,7 +204,7 @@ nav a.active {
 
 /* header */
 .header {
-    z-index: 1300;
+    /* z-index: 1300; */
     position: fixed;
     top: 0;
     bottom: 0;
