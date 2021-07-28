@@ -13,11 +13,11 @@ function index(req, res) {
     //         })
     //     })
 
-    res.render('assets/index');
+    res.render('assets/index', {user: req.user});
 }
 
 const newAsset = (req, res) => {
-    res.render('assets/new');
+    res.render('assets/new', {user: req.user});
 }
 
 const createAsset = (req, res) => {
