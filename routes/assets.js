@@ -6,6 +6,11 @@ const { isLoggedIn } = require('./index');
 
 
 router.get('/', isLoggedIn, assetsController.index);
+router.get('/new', isLoggedIn, assetsController.new);
+
+router.post('/new', isLoggedIn, assetsController.create);
+
+
 
 
 module.exports = router;

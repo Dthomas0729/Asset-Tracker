@@ -6,11 +6,11 @@ const User = require('./user')
 const assetSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     type: {type: String, enum: ['Property', 'Company', 'Stock']},
-    info: String,
+    nickname: String,
+    price: Number,
     income: Number,
     expenses: Number,
-    price: Number,
-    shares: Number
+    details: String,
 }, {
     timestamps: true
   }

@@ -6,24 +6,27 @@
         <input type="text" />
         <button> submit </button>
     </form> -->
-    <table id="list">
-        <thead>
-          <tr>
-            <th>assets</th>
-            <th>Assets <br>List</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% assets.forEach(function(m) { %>
+    <div id='assets-page'>
+      <table id="assetsList">
+          <thead>
             <tr>
-              <td><%= m.assets %></td>
-              <td><%= m.assetslist %></td>
-              <td><a href="/assets/<%= m._id %>">DETAILS</a></td>
+              <th>Assets</th>
+              <th>Assets <br>List</th>
+              <th></th>
             </tr>
-            <% }); %>
-          </tbody>
-        </table>
+          </thead>
+          <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><a href="/assets">DETAILS</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button><a href='/assets/new'>Create Asset</a></button>
+
+    </div>
 
 
 

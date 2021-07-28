@@ -4,6 +4,7 @@ body {
     margin: 0px
 }
 
+/* NAVBAR STYLING BELOW */
 nav {
     background-color: transparent;
     overflow: hidden;
@@ -50,6 +51,7 @@ nav a.active {
     color: white;
   }
 
+/* USER PAGE STYLING */
 #user-page {
     font-family: 'Quantico', sans-serif;
     color: white;
@@ -68,4 +70,55 @@ nav a.active {
     align-self: auto;
     align-items: center;
 
+}
+
+/* ASSETS PAGE STYLING */
+#assetsList {
+    color: white
+
+}
+
+#assetsList a {
+    color: white;
+}
+
+/* CREATE ASSET PAGE */
+#new-form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+
+#create-asset-page {
+    display: flex;
+    justify-content: flex-start;
+    margin: 36px;
+}
+
+#new-form label {
+    color: white;
+    margin: 4px;
+    padding: 2px;
+    font-size: 24px;
+}
+
+#new-form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#new-form div input {
+    height: 24px;
+}
+
+#new-form #submit {
+    font-size: 24px;
+    margin: 12px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
 }

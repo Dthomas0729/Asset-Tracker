@@ -1,20 +1,49 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" tracking="/assets/" method="POST">
-        <label>Assets List:</label>
-        <input type="text" name="assetslist">
-        <label>Create New Assets:</label>
-        <input type="text" name="createNewAssets">
-        <label>View Assets:</label>
-            <select name="viewAssets">
-            <option value="Type">Type</option>
-            <option value="Income">Income</option>
-            <option value="Expenses">Expenses</option>
-            <option value="ROI">ROI</option>
+<div id='create-asset-page'>
+    <form id="new-form" href='/assets/new' method="POST">
+
+        <div>
+            <label>Type</label>
+        
+            <select name="type">
+            <option value="Company">Company</option>
+            <option value="Property">Property</option>
+            <option value="Stock">Stock</option>
             </select>
-        <label>Update Assets:</label>
-        <input type="checkbox" name="updateAssets" checked>
-        <input type="submit" value="Add">
-  </form>
+        </div>
+        
+        <div>
+            <label>Name</label>
+            <input type="text" name="nickname" placeholder="address">
+        </div>
+        
+        <div>
+            <label>Price</label>
+            <input type="text" name="price">    
+        </div>
+
+        <div>
+            <label>Income</label>
+            <input type="text" name="income">
+        </div>
+    
+        <div>
+            <label>Expenses</label>
+            <input type="text" name="expenses" >
+        </div>
+
+        <div>
+            <label>Details</label>
+            <input type="text" name="details">
+        </div>
+    
+        <input id='submit' type="submit" value="ADD">
+      </form>
+
+      <div id='asset-info'> 
+
+      </div>
+</div>
 
   <%- include('../partials/footer') %>
