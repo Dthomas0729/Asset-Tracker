@@ -23,10 +23,20 @@
         
         <div id='nav-links'>
             <a href="/home">Home</a>
-            <a href="/assets">Assets</a>
-            <a href="/auth/google">Login</a>
-            
+            <div class="dropdown">
+                <button class="dropbtn">Assets<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                  <a href="/assets">View</a>
+                  <a href="/assets/new">Create</a>
+                  <a href="/assets/update">Update</a>
+                  <a href="/assets/delete">Delete</a>
+                  
+                </div>
+              </div>
+            <a href="/auth/google">Login</a>   
         </div>
+
+
 
     </nav>
     
