@@ -21,6 +21,7 @@ const createAsset = (req, res) => {
 
     const asset = new Asset({
         user: req.user,
+        type: req.body.type,
         nickname: req.body.nickname,
         price: req.body.price,
         income: req.body.income,

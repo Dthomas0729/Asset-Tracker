@@ -4,16 +4,31 @@
     <div id='assets-page'>
       <table id="assetsList">
           <thead>
-              <th>Companies</th>
-              <th>Properties</th>
-              <th>Stock</th>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Income</th>
+              <th>Expenses</th>
+              <th>Details</th>
+
+            </tr>
           </thead>
           <tbody> 
             
-                <td></td>
-                <td></td>
-                <td><a href="/assets">DETAILS</a></td>
-            </tbody>
+            <% assets.forEach((asset) => { %>
+            <tr>
+              <td><%= asset.type %></td>
+              <td><%= asset.nickname %></td>
+              <td><%= asset.price %></td>
+              <td><%= asset.income %></td>
+              <td><%= asset.expenses %></td>
+              <td><%= asset.details %></td>
+
+            </tr>
+
+            <% }) %>
+          </tbody>
           </table>
 
           <button><a href='/assets/new'>Create Asset</a></button>

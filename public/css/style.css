@@ -73,14 +73,26 @@ nav a.active {
 }
 
 /* ASSETS PAGE STYLING */
+#assets-page {
+    display: flex;
+    justify-content: center;
+
+}
+
 #assetsList {
-    color: white
-
-}
-
-#assetsList a {
     color: white;
+    font-size: 16px;
+
 }
+
+#assetsList th {
+    color: white;
+    font-family: 'Quantico', sans-serif;
+}
+
+#assetsList th, td {
+    border-bottom: 1px solid #ddd;
+  }
 
 /* CREATE ASSET PAGE */
 #new-form {
@@ -169,4 +181,3 @@ nav a.active {
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #ddd;}
 
-  
