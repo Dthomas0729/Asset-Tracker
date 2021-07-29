@@ -4,17 +4,28 @@
       <table id="assetsList">
           <thead>
             <tr>
-              <th>Assets</th>
-              <th>Assets <br>List</th>
-              <th></th>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Income</th>
+                    <th>Expenses</th>
+                    <th>Details</th>
+                  </tr>
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td><a href="/assets">DETAILS</a></td>
-              </tr>
+            <% assets.forEach(function(asset) { %>
+                <tr>
+                  <td><%= asset.type %></td>
+                  <td><%= asset.name %></td>
+                  <td><%= asset.price %></td>
+                  <td><%= asset.income %></td>
+                  <td><%= asset.expenses %></td>
+                  <td><%= asset.details %></td>
+                  <td><a href="/assets/">DETAILS</a></td>
+                </tr>
+                <% }); %>
             </tbody>
           </table>
 

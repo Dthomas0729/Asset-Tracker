@@ -2,18 +2,15 @@ const User = require('../models/user')
 const Asset = require('../models/asset')
 
 function index(req, res) {
-    // User.findById(req.params.id)
-    //     .populate("assets")
-    //     .exec((err, user) => {
-    //         Asset.find({
-    //             _id: { $nin: user.assets}
-    //         }, (err, assets) => {
-    //             console.log(assets);
-    //             res.render('user/assets')
-    //         })
-    //     })
-
-    res.render('assets/index', {user: req.user});
+    User.find(req.user)
+        .populate("assets")
+        .exec((err, user) => {
+            Asset.find({
+                user:  req.user.id
+            }, (err, assets) => {
+                res.render('assets/index', {user: req.user, assets})
+            })
+        })
 }
 
 const newAsset = (req, res) => {
