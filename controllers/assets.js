@@ -5,7 +5,7 @@ function index(req, res) {
     User.find(req.user)
         .populate("assets")
         .exec((err, user) => {
-            Asset.find({}, function (err, assets) {
+            Asset.find({user: req.user._id}, function (err, assets) {
                 res.render('assets/index', {user: req.user, assets});
                 
             })

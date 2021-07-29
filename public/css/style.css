@@ -19,7 +19,18 @@ nav {
 
 nav div {
     display: flex;
+}
 
+nav #user-name {
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+#user-name img {
+    width: 36px;
+    height: fit-content;
+    margin: 12px;
 }
 
 nav a {
