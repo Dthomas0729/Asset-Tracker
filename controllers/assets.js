@@ -35,7 +35,7 @@ const createAsset = (req, res) => {
       })
 }
 
-const updateAsset = (req, res) => {
+const updateForm = (req, res) => {
 
     Asset.findById(req.params.id, (err, asset) => {
         res.render('assets/update', {user: req.user, asset});
@@ -43,6 +43,24 @@ const updateAsset = (req, res) => {
     });
     
 }
+
+const updateAsset = (req, res) => {
+    Asset.findByIdAndUpdate(req.params.id, 
+        {
+            user: req.user,
+            nickname: req.body.nickname,
+            price: req.body.price,
+            income: req.body.income,
+            expenses: req.body.expenses,
+            details: req.body.details,
+        }, (err) => {
+            if (err) return err
+            else {
+                res.redirect('/assets')
+            }
+        });
+}
+
 
 const deleteAsset = (req, res) => {
     res.render('assets/delete', {user: req.user});
@@ -52,6 +70,7 @@ module.exports = {
     index,
     new: newAsset,
     create: createAsset,
+    updateForm: updateForm,
     update: updateAsset,
     delete: deleteAsset,
 };
