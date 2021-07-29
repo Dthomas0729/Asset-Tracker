@@ -35,8 +35,23 @@ const createAsset = (req, res) => {
       })
 }
 
+const updateAsset = (req, res) => {
+
+    Asset.findById(req.params.id, (err, asset) => {
+        res.render('assets/update', {user: req.user, asset});
+        console.log(asset);
+    });
+    
+}
+
+const deleteAsset = (req, res) => {
+    res.render('assets/delete', {user: req.user});
+}
+
 module.exports = {
     index,
     new: newAsset,
-    create: createAsset
+    create: createAsset,
+    update: updateAsset,
+    delete: deleteAsset,
 };
