@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div id='update-asset-page'>
+    <form id="update-form" href='/assets/update' method="POST">
+        
+        <div>
+            <label>Name</label>
+            <input type="text" name="nickname" placeholder=<%= asset.nickname %>>
+        </div>
+        
+        <div>
+            <label>Price</label>
+            <input type="text" name="price" placeholder="enter price">    
+        </div>
+
+        <div>
+            <label>Income</label>
+            <input type="text" name="income" placeholder="enter income">
+        </div>
+    
+        <div>
+            <label>Expenses</label>
+            <input type="text" name="expenses" placeholder="enter expenses">
+        </div>
+
+        <div>
+            <label>Details</label>
+            <input type="text" name="details" placeholder="enter details">
+        </div>
+    
+        <input id='submit' type="submit" value="ADD">
+      </form>
+
+</div>
+
+<%- include('../partials/footer') %>

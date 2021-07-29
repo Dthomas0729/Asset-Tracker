@@ -8,7 +8,12 @@ const { isLoggedIn } = require('./index');
 router.get('/', isLoggedIn, assetsController.index);
 router.get('/new', isLoggedIn, assetsController.new);
 
+router.get('/:id/update', isLoggedIn, assetsController.update);
+router.get('/:id/delete', isLoggedIn, assetsController.delete);
+
 router.post('/new', isLoggedIn, assetsController.create);
+router.post('/:id/update', isLoggedIn, assetsController.update);
+router.post('/:id/delete', isLoggedIn, assetsController.delete);
 
 
 

@@ -9,40 +9,43 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Quantico:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
+    
+  <div class='navbar'>
+    <a href="/home">Home</a>
 
-        <div id='logo'>
-            <!-- <img src=""> -->
-            <h2>ASSET TRACKER</h2>
-            
-        </div>
-        
-        <div id='nav-links'>
-            <a href="/home">Home</a>
-            <div class="dropdown">
-                <button class="dropbtn">Assets<i class="fa fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                  <a href="/assets">View</a>
-                  <a href="/assets/new">Create</a>
-                  <a href="/assets/update">Update</a>
-                  <a href="/assets/delete">Delete</a> 
-                </div>
-              </div>
+       <div class="subnav">
+          <button class="subnavbtn">Assets<i class="fa fa-caret-down"></i></button>
+              
+            <div class="subnav-content">
+              <a href="/assets">View</a>
+              <a href="/assets/new">Create</a>
+              <a href="/assets/update">Update</a>
+              <a href="/assets/delete">Delete</a> 
+            </div>  
 
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-            <% } else { %>
-                <a href="/auth/google">Login</a>
-            <% } %>
         </div>
 
-
-
-    </nav>
+    <% if (user) { %>
+      <a href="/logout">Log Out</a>
+    <% } else { %>
+      <a href="/auth/google">Login</a>
+    <% } %>
+                      
+    
+    <% if (user) { %>
+      <h2><%= user.name %></h2>
+      <img src=<%= user.avatarUrl %>>
+    <% } %>
+                    
+              
+  </div>
+    
     
 <main>
 
