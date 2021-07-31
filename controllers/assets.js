@@ -5,21 +5,12 @@ function index(req, res) {
     User.find(req.user)
         .populate("assets")
         .exec((err, user) => {
-<<<<<<< HEAD
-            Asset.find({user: req.user._id}, function (err, assets) {
-                res.render('assets/index', {user: req.user, assets});
-                
-            })
-        })
-
-=======
             Asset.find({
                 user:  req.user.id
             }, (err, assets) => {
                 res.render('assets/index', {user: req.user, assets})
             })
         })
->>>>>>> views-assets
 }
 
 const newAsset = (req, res) => {
