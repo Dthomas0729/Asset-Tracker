@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <div id='update-asset-page'>
-    <form id="update-form" href='/assets/update' method="POST">
+    <form id="update-form" href='/assets/<%= asset._id %>/update' method="POST">
         
         <div>
             <label>Name</label>
@@ -28,7 +28,7 @@
             <input type="text" name="details" placeholder="enter details">
         </div>
     
-        <input id='submit' type="submit" value="ADD">
+        <input id='submit' type="submit" value="Update">
       </form>
 
 </div>
