@@ -1,35 +1,76 @@
 <%- include('../partials/header') %>
 
 <div id='assets-page'>
-    <table id="assetsList">
+  <div id='companies'>
+
+    <h2>Companies</h2>
+    <table>
         <thead>
           <tr>
-            <th>Type</th>
             <th>Name</th>
-            <th>Price</th>
-            <th>Income</th>
-            <th>Expenses</th>
-            <th>Details</th>
-
           </tr>
         </thead>
         <tbody> 
           
           <% assets.forEach((asset) => { %>
+            <% if (asset.type === 'Company') { %>
           <tr>
-            <td><%= asset.type %></td>
             <td><%= asset.nickname %></td>
-            <td><%= asset.price %></td>
-            <td><%= asset.income %></td>
-            <td><%= asset.expenses %></td>
-            <td><%= asset.details %></td>
             <td><a href='/assets/<%= asset._id %>/delete'>Delete</a></td>
 
           </tr>
-
+            <% } %>
           <% }) %>
         </tbody>
         </table>
+    
+  </div>
+
+  <div id='properties'>
+    <h2>Properties</h2>
+    <table>
+        <thead>
+          <tr>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody> 
+          
+          <% assets.forEach((asset) => { %>
+            <% if (asset.type === 'Property') { %>
+          <tr>
+            <td><%= asset.nickname %></td>
+            <td><a href='/assets/<%= asset._id %>/delete'>Delete</a></td>
+
+          </tr>
+            <% } %>
+          <% }) %>
+        </tbody>
+        </table>
+  </div>
+
+  <div id='stock'>
+    <h2>Stock</h2>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody> 
+          
+          <% assets.forEach((asset) => { %>
+            <% if (asset.type === 'Stock') { %>
+          <tr>
+            <td><%= asset.nickname %></td>
+            <td><a href='/assets/<%= asset._id %>/delete'>Delete</a></td>
+
+          </tr>
+            <% } %>
+          <% }) %>
+        </tbody>
+        </table>
+  </div>
 
   </div>
 
