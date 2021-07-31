@@ -19,7 +19,7 @@ const newAsset = (req, res) => {
 
 const assetForm = (req, res) => {
     let type = req.body.type;
-    console.log(type, req.body.type)
+    type = type.toLowerCase()
 
     res.redirect(`/assets/new/${type}`);
     // if (type === 'Company') {
