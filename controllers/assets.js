@@ -41,9 +41,15 @@ const type = (req, res) => {
 
 const createAsset = (req, res) => {
 
+    let type = req.params.type
+    let firstLetter = type.charAt(0).toUpperCase()
+
+    type = firstLetter + type.slice(1, type.length);
+    console.log(type)
+
     const asset = new Asset({
         user: req.user,
-        type: req.params.type,
+        type: type,
         nickname: req.body.nickname,
         price: req.body.price,
         income: req.body.income,
