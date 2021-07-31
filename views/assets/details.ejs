@@ -50,6 +50,12 @@
         <label>More Details:</label>
         <h3><%= asset.details %></h3>
     <% } %>
+
+    <div>
+        <a href='/assets/<%= asset._id %>/update'>Update</a>
+        <a href='/assets/<%= asset._id %>/delete'>Delete</a>
+    </div>
+    
 </div>
 
 

@@ -65,6 +65,7 @@ body {
   border: 1px solid white;
   background-color: transparent;
   color: white;
+  text-decoration: none;
 }
 
 /* ASSETS PAGE STYLING */
@@ -371,3 +372,20 @@ body {
   align-items: flex-start;
   border: 4px solid white  
 }  
+
+#details div {
+  display: flex;
+  flex-direction: row;
+}
+
+#details a {
+  font-size: 12px;
+  font-family: 'Quantico', sans-serif;
+  margin: 8px;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+}
