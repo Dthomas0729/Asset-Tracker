@@ -53,9 +53,11 @@ const createAsset = (req, res) => {
     console.log(asset);
 
     asset.save(function(err) {
-        if (err) return res.redirect('/assets/new');
-        res.redirect(`/assets`);
-      })
+        if (err) return err
+            else {
+                res.redirect('/assets');
+            }
+    })
 }
 
 const updateForm = (req, res) => {
