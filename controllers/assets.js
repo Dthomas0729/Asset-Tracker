@@ -88,12 +88,22 @@ const deleteAsset = (req, res) => {
 
 }
 
+const deleteForm = (req, res) => {
+
+    Asset.findById(req.params.id, (err, asset) => {
+        res.render('assets/delete', {user: req.user, asset});
+        console.log(asset);
+    });
+    
+}
+
 module.exports = {
     index,
     new: newAsset,
     create: createAsset,
     updateForm,
     deleteList,
+    deleteForm,
     update: updateAsset,
     delete: deleteAsset,
     
