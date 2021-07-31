@@ -11,6 +11,7 @@ const assetSchema = new Schema({
     income: Number,
     expenses: Number,
     details: String,
+    shares: Number,
 }, {
     timestamps: true
   }

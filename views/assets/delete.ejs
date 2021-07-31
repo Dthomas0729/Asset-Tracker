@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<form id="delete-form" href='/assets/<%= asset._id %>/delete' method="POST">
+    
+    <h2>Are you sure you want to delete <%= asset.nickname %></h2>
+    <a href='/assets/delete'>Go back</a>
+    <input id='submit' type="submit" value="DELETE">
+
+</form>
+
+<%- include('../partials/footer') %>

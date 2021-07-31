@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<div id='details'>
+
+
+    <h2><%= asset.type %></h2>
+
+    <% if (asset.type === 'Company') { %>
+        <label>Name:</label>
+        <h3><%= asset.nickname %></h3>
+
+        <label>Price:</label>
+        <h3>$<%= asset.price %></h3>
+
+        <label>Income:</label>
+        <h3>+ $<%= asset.income %></h3>
+
+        <label>Expenses:</label>
+        <h3>- $<%= asset.expenses %></h3>
+
+        <label>More Details:</label>
+        <h3><%= asset.details %></h3>
+
+    <% } else if (asset.type === 'Property') { %>
+        <label>Address:</label>
+        <h3><%= asset.nickname %></h3>
+
+        <label>Price:</label>
+        <h3>$<%= asset.price %></h3>
+
+        <label>Income:</label>
+        <h3>+ $<%= asset.income %></h3>
+
+        <label>Expenses:</label>
+        <h3>- $<%= asset.expenses %></h3>
+
+        <label>More Details:</label>
+        <h3><%= asset.details %></h3>
+
+    <% } else { %>
+        <label>Name:</label>
+        <h3><%= asset.nickname %></h3>
+
+        <label>Price:</label>
+        <h3>$<%= asset.price %></h3>
+
+        <label>Shares:</label>
+        <h3><%= asset.shares %></h3>
+
+        <label>More Details:</label>
+        <h3><%= asset.details %></h3>
+    <% } %>
+</div>
+
+
+<%- include('../partials/footer') %>

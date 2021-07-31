@@ -1,51 +1,22 @@
 <%- include('../partials/header') %>
 
 <div id='create-asset-page'>
-    <form id="new-form" href='/assets/new' method="POST">
 
-    <div class="label">
-        <label>Type: </label>
-    
-        <select name="type">
+    <form id="new-form" href='/assets/new' method="POST">
+        
+        <div>        
+            <h1>Please choose an asset type:</h1>
+            <select name="type">
             <option value="Company">Company</option>
             <option value="Property">Property</option>
             <option value="Stock">Stock</option>
-        </select>
-    </div>
-
-    <div class="form-group">  
-        <div>
-            <label>Name</label>
-            <input type="text" name="nickname" placeholder="enter name">
-        </div>
-        
-        <div>
-            <label>Price</label>
-            <input type="text" name="price" placeholder="enter price">    
+            </select>
         </div>
 
-        <div>
-            <label>Income</label>
-            <input type="text" name="income" placeholder="enter income">
-        </div>
     
-        <div>
-            <label>Expenses</label>
-            <input type="text" name="expenses" placeholder="enter expenses">
-        </div>
-
-        <div>
-            <label>Details</label>
-            <input type="text" name="details" placeholder="enter details">
-        </div>
-
-    </div>
-        <input id='submit' type="submit" value="ADD">
+        <input id='submit' type="submit" value="Submit">
       </form>
 
-      <div id='asset-info'> 
-
-      </div>
 </div>
 
   <%- include('../partials/footer') %>

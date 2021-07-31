@@ -1,46 +1,26 @@
-/* body {    
-    background-color: #e8f0ec;
-    background-size: cover;
-    margin: 0;
-    padding: 36 24px;
-    margin-top: 0px;
-} */
-
-/* HTML BODY STYLING*/
 html, body {
-    width: 100%;
-    height:100%;
-    padding-top: 0px;
-    margin-top: 0px;
-  }
-  
-  body {
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-  }
-  
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
-  }
+  width: 100%;
+  height:100%;
+  padding-top: 0px;
+  margin-top: 0px;
+}
 
-h2 {
-    color: white;
-    font-size: 36px;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    padding-left: 0;
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #logo {
@@ -134,11 +114,10 @@ h2 {
     display: flex;
     flex-direction: wrap;
     justify-content: space-around;
-    height: 200px;
-    margin-top: 10px;
-    position: relative;
-    padding: 14px 16px;
-} 
+    height: 600px;
+    width: -webkit-fill-available;
+
+}
 
 #user-page div {
     flex-direction: column;
@@ -150,17 +129,80 @@ h2 {
 
 }
 
-/* ASSETS PAGE STYLING */
-#assetsList {
-    color: black;
-    padding: 14px 16px;
-    margin: 10px;
+#user-page div a {
+  margin-left: 8px;
+  padding: 2px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
 
+/* ASSETS PAGE STYLING */
+#assets-page {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 48px;
+
+}
+
+#assets-page a {
+  margin-left: 8px;
+  padding: 2px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+#companies, #properties, #stock {
+    color: white;
+    font-size: 16px;
+    font-family: 'Quantico', sans-serif;
+}
+#assets-page button {
+    font-size: 20px;
+    margin: 16px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 8px;
+    background-color: gray;
 }
 
 #assetsList a {
     color: black;
     position: relative;
+}
+
+#update-asset-page {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+#update-form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+
+#update-form label {
+  color: white;
+  margin: 4px;
+  padding: 2px;
+  font-size: 24px;
+}
+
+#update-form #submit {
+  font-size: 24px;
+    margin-top: 16px;
+    padding: 2px;
+    border-radius: 6px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+
 }
 
 /* CREATE ASSET PAGE */
@@ -178,6 +220,8 @@ h2 {
     margin-top: 125px;
 
 }
+
+
 
 #new-form label {
     color: rgb(163, 153, 153);
@@ -203,26 +247,28 @@ h2 {
 }
 
 #new-form #submit {
-    font-size: 18px;
-    margin: auto;
-    padding: 8px 12px 8px 12px;
-    border-radius: 8px;
-    background-color: gray;
-    color: white;
+  font-size: 24px;
+  margin: 12px;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
 }
 
-/* header */
-.header {
-    /* z-index: 1300; */
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0px;
-    padding: 2px;
-    padding-top: 1px;
-    height: 65px;
+/* The navigation menu */
+.navbar {
+    overflow: hidden;
+    background-color: transparent;
+    font-family: 'Quantico', sans-serif;
+  }
+  
+  /* Navigation links */
+.navbar a {
+    float: left;
+    display: block;
+    font-size: 16px;
+    color: white;
     text-align: center;
     background: rgb(81, 100, 64);
     box-shadow: 0 15px 30px 0 rgb(47 54 65 / 10%);
@@ -233,11 +279,75 @@ h2 {
         text-align: center;
 }
 
-.create{
-    display: center;
+  /* The subnavigation menu */
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: gray;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
     position: absolute;
-    margin: 20px;
-    background-color: grey;
-    border-radius: 8px;
-    padding: 8px 12px;
-}
+    left: 0;
+    background-color: gray;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+
+  #index-page {
+    margin-top: 36px;
+    padding: 24px;
+    color: white;
+    font-family: 'Quantico', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid white
+  }
+
+#details {
+  margin-top: 36px;
+  padding: 24px;
+  color: white;
+  font-family: 'Quantico', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 4px solid white  
+}  
