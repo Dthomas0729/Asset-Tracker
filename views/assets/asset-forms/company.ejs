@@ -1,21 +1,24 @@
 <%- include('../../partials/header') %>
 
-<form id='company-form' href='/assets/new/company' method="POST">
-    <div>
-        <label>Name</label>
-        <input type="text" name="nickname" placeholder="enter your company name">
-        <label>Price</label>
-        <input type="text" name="price" placeholder="enter price">
-        <label>Income</label>
-        <input type="text" name="income" placeholder="enter monthly income">
-        <label>Expenses</label>
-        <input type="text" name="expenses" placeholder="enter monthly expenses">
-        <label>Details</label>
-        <input type="text" name="details" placeholder="enter any details">
-    </div >
-    
-    <input id='submit' type="submit" value="Submit">
-</form>
+<div id='create-asset-page'>
+    <form id='company-form' href='/assets/new/company' method="POST">
+        <div>
+            <label>Name</label>
+            <input type="text" name="nickname" placeholder="enter your company name">
+            <label>Price</label>
+            <input type="text" name="price" placeholder="enter price">
+            <label>Income</label>
+            <input type="text" name="income" placeholder="enter monthly income">
+            <label>Expenses</label>
+            <input type="text" name="expenses" placeholder="enter monthly expenses">
+            <label>Details</label>
+            <input type="text" name="details" placeholder="enter any details">
+        </div >
+        
+        <input id='submit' type="submit" value="Submit">
+    </form>
+
+</div>
 
 
 <%- include('../../partials/footer') %>
