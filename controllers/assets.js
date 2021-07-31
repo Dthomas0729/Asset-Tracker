@@ -39,7 +39,6 @@ const updateForm = (req, res) => {
 
     Asset.findById(req.params.id, (err, asset) => {
         res.render('assets/update', {user: req.user, asset});
-        console.log(asset);
     });
     
 }
@@ -92,15 +91,21 @@ const deleteForm = (req, res) => {
 
     Asset.findById(req.params.id, (err, asset) => {
         res.render('assets/delete', {user: req.user, asset});
-        console.log(asset);
     });
     
+}
+
+const assetDetails = (req, res) => {
+    Asset.findById(req.params.id, (err, asset) => {
+        res.render('assets/details', {user: req.user, asset});
+    });
 }
 
 module.exports = {
     index,
     new: newAsset,
     create: createAsset,
+    details: assetDetails,
     updateForm,
     deleteList,
     deleteForm,

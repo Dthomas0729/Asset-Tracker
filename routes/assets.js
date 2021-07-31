@@ -9,8 +9,10 @@ router.get('/', isLoggedIn, assetsController.index);
 router.get('/new', isLoggedIn, assetsController.new);
 
 router.get('/update', isLoggedIn, assetsController.update)
-router.get('/:id/update', isLoggedIn, assetsController.updateForm);
 router.get('/delete', isLoggedIn, assetsController.deleteList);
+
+router.get('/:id/details', isLoggedIn, assetsController.details);
+router.get('/:id/update', isLoggedIn, assetsController.updateForm);
 router.get('/:id/delete', isLoggedIn, assetsController.deleteForm);
 
 router.post('/new', isLoggedIn, assetsController.create);

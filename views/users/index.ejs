@@ -1,32 +1,81 @@
 <%- include('../partials/header') %>
 
-<div id='user-page'>
 
-    <div id='income-expenses'>
-        <table>
-            <thead>
-                <th>Income</th>
-                <th>Expenses</th>
-            </thead>
+<div id='index-page'>
+    <h1>Welcome to your personal Asset Tracker!</h1>
+
+    <div id='user-page'>
+        
+        <div id='companies'>
+
+            <h2>Companies</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody> 
+                
+                <% assets.forEach((asset) => { %>
+                    <% if (asset.type === 'Company') { %>
+                <tr>
+                    <td><%= asset.nickname %></td>
+                    <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
     
-            <tbody>
-                <td>+ $30,320</td>
-                <td>- $5,320</td>
-            </tbody>
-        </table>
-    </div>
+                </tr>
+                    <% } %>
+                <% }) %>
+                </tbody>
+                </table>
+            
+        </div>
+
+        <div id='properties'>
+            <h2>Properties</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Address</th>
+                </tr>
+                </thead>
+                <tbody> 
+                
+                <% assets.forEach((asset) => { %>
+                    <% if (asset.type === 'Property') { %>
+                <tr>
+                    <td><%= asset.nickname %></td>
+                    <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
     
-    <div id='cash-flow'>
-        <h2>Cash Flow:</h2>
-        <span><h2>$25,000</h2></span>
+                </tr>
+                    <% } %>
+                <% }) %>
+                </tbody>
+                </table>
+        </div>
+
+        <div id='stock'>
+            <h2>Stock</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody> 
+                
+                <% assets.forEach((asset) => { %>
+                    <% if (asset.type === 'Stock') { %>
+                <tr>
+                    <td><%= asset.nickname %></td>
+                    <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
     
-    </div>
-    
-    <div id='asset-icons'>
-        <button id='property'>Properties</button>
-        <button id='stock'>Stocks</button>
-        <button id='company'>Companies</button>
+                </tr>
+                    <% } %>
+                <% }) %>
+                </tbody>
+                </table>
+        </div>
     </div>
 </div>
-
 <%- include('../partials/footer') %>
