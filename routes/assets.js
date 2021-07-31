@@ -24,6 +24,4 @@ router.post('/:id/update', isLoggedIn, assetsController.update);
 router.post('/:id/delete', isLoggedIn, assetsController.delete);
 
 
-
-
 module.exports = router;

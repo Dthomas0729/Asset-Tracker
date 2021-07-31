@@ -19,7 +19,7 @@ const newAsset = (req, res) => {
 
 const assetForm = (req, res) => {
     let type = req.body.type;
-    console.log(type, req.body.type)
+    type = type.toLowerCase()
 
     res.redirect(`/assets/new/${type}`);
     // if (type === 'Company') {
@@ -41,9 +41,15 @@ const type = (req, res) => {
 
 const createAsset = (req, res) => {
 
+    let type = req.params.type
+    let firstLetter = type.charAt(0).toUpperCase()
+
+    type = firstLetter + type.slice(1, type.length);
+    console.log(type)
+
     const asset = new Asset({
         user: req.user,
-        type: req.params.type,
+        type: type,
         nickname: req.body.nickname,
         price: req.body.price,
         income: req.body.income,
@@ -53,9 +59,11 @@ const createAsset = (req, res) => {
     console.log(asset);
 
     asset.save(function(err) {
-        if (err) return res.redirect('/assets/new');
-        res.redirect(`/assets`);
-      })
+        if (err) return err
+            else {
+                res.redirect('/assets');
+            }
+    })
 }
 
 const updateForm = (req, res) => {
