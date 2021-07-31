@@ -23,7 +23,7 @@
                   <td><%= asset.income %></td>
                   <td><%= asset.expenses %></td>
                   <td><%= asset.details %></td>
-                  <td><a href="/assets/">DETAILS</a></td>
+                  <td><a href="/assets/<%= asset._id %>/update">Update</a></td>
                 </tr>
                 <% }); %>
             </tbody>
