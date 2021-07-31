@@ -28,8 +28,91 @@ body {
     display: flex;
    
 }
-/* Navigation links */
+
 .navbar {
+  overflow: hidden;
+  background-color: transparent;
+  font-family: 'Quantico', sans-serif;
+}
+.navbar {
+  overflow: hidden;
+  background-color: transparent; 
+  margin: auto;
+  display: flex;
+  border:1px solid;
+  border-radius: 4px;
+  height: 10%;
+  width: 100%;
+  padding-top: 0;
+  
+  
+}
+
+.navcontent {
+  position: absolute;
+  right: 200px;
+  background-color:transparent;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  background: transparent;
+  box-shadow: 0 15px 30px 0 rgb(47 54 65 / 10%);
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: transparent;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: black;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+} 
+
+
+/* Navigation links */
+/* .navbar {
     overflow: hidden;
     background-color: transparent; 
     margin: auto;
@@ -46,6 +129,7 @@ body {
   .navcontent {
     position: absolute;
     right: 200px;
+    background-color:transparent;
   }
   
   .navbar a {
@@ -87,7 +171,7 @@ body {
     display: none;
     position: absolute;
     left: 0;
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: transparent;
     width: 100%;
     z-index: 1;
   }
@@ -105,7 +189,7 @@ body {
   
   .subnav:hover .subnav-content {
     display: block;
-  }
+  } */
 /* USER PAGE STYLING */
 #user-page {
     font-family: 'Quantico', sans-serif;
@@ -257,6 +341,7 @@ body {
 }
 
 /* The navigation menu */
+
 .navbar {
     overflow: hidden;
     background-color: transparent;
@@ -270,20 +355,15 @@ body {
     font-size: 16px;
     color: white;
     text-align: center;
-    background: rgb(81, 100, 64);
+    background: transparent;
     box-shadow: 0 15px 30px 0 rgb(47 54 65 / 10%);
-}
-
-.container{
-        max-width: 1200px;
-        text-align: center;
 }
 
   /* The subnavigation menu */
   .subnav {
     float: left;
     overflow: hidden;
-  }
+  } 
   
   /* Subnav button */
   .subnav .subnavbtn {
@@ -299,7 +379,7 @@ body {
   
   /* Add a red background color to navigation links on hover */
   .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: gray;
+    background-color: transparent;
   }
   
   /* Style the subnav content - positioned absolute */
@@ -307,10 +387,10 @@ body {
     display: none;
     position: absolute;
     left: 0;
-    background-color: gray;
+    background-color: transparent;
     width: 100%;
     z-index: 1;
-  }
+  } */
   
   /* Style the subnav links */
   .subnav-content a {
@@ -329,6 +409,7 @@ body {
   .subnav:hover .subnav-content {
     display: block;
   }
+
 
   #index-page {
     margin-top: 36px;
