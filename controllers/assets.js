@@ -52,6 +52,7 @@ const createAsset = (req, res) => {
         type: type,
         nickname: req.body.nickname,
         price: req.body.price,
+        shares: req.body.shares,
         income: req.body.income,
         expenses: req.body.expenses,
         details: req.body.details,

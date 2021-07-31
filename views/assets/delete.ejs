@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 
-<form id="delete-form" href='/assets/<%= asset._id %>/delete' method="POST">
+<div id='delete-page'>
+    <form id="delete-form" href='/assets/<%= asset._id %>/delete' method="POST">
+        
+        <p>Are you sure you want to delete <%= asset.nickname %>?</p>
+        <a href='/assets/delete'>Go back</a>
+        <input id='submit' type="submit" value="DELETE">
     
-    <h2>Are you sure you want to delete <%= asset.nickname %></h2>
-    <a href='/assets/delete'>Go back</a>
-    <input id='submit' type="submit" value="DELETE">
+    </form>
 
-</form>
+</div>
 
 <%- include('../partials/footer') %>

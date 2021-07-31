@@ -3,30 +3,21 @@
 <div id='update-asset-page'>
     <form id="update-form" href='/assets/<%= asset._id %>/update' method="POST">
         
-        <div>
+
             <label>Name</label>
-            <input type="text" name="nickname" placeholder=<%= asset.nickname %>>
-        </div>
+            <input type="text" name="nickname" value=<%= asset.nickname %>>
         
-        <div>
             <label>Price</label>
-            <input type="text" name="price" placeholder=<%= asset.price %>>    
-        </div>
-
-        <div>
+            <input type="text" name="price" value=<%= asset.price %>>    
+        
             <label>Income</label>
-            <input type="text" name="income" placeholder=<%= asset.income %>>
-        </div>
-    
-        <div>
+            <input type="text" name="income" value=<%= asset.income %>>
+        
             <label>Expenses</label>
-            <input type="text" name="expenses" placeholder=<%= asset.expenses %>>
-        </div>
-
-        <div>
+            <input type="text" name="expenses" value=<%= asset.expenses %>>
+     
             <label>Details</label>
-            <input type="text" name="details" placeholder=<%= asset.details %>>
-        </div>
+            <input type="text" name="details" value=<%= asset.details %>>    
     
         <input id='submit' type="submit" value="Update">
       </form>
