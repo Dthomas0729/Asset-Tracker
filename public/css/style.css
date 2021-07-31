@@ -23,96 +23,13 @@ body {
     }
 }
 
-#logo {
-    margin-left: 24px;
-    display: flex;
-   
-}
-/* Navigation links */
-.navbar {
-    overflow: hidden;
-    background-color: transparent; 
-    margin: auto;
-    display: flex;
-    border:1px solid;
-    border-radius: 4px;
-    height: 10%;
-    width: 100%;
-    padding-top: 0;
-    
-    
-  }
-
-  .navcontent {
-    position: absolute;
-    right: 200px;
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: flex;
-    position: relative;
-    
-  }
-  
-  .subnav {
-    float: left;
-    overflow: hidden;
-    justify-content:center;
-  }
-  
-  .subnav .subnavbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    display: flex;
-    position: center;
-  }
-  
-  .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: transparent;
-  }
-  
-  .subnav-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    background-color: rgba(128, 128, 128, 0.5);
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .subnav-content a {
-    float: left;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .subnav-content a:hover {
-    background-color: #eee;
-    color: black;
-  }
-  
-  .subnav:hover .subnav-content {
-    display: block;
-  }
 /* USER PAGE STYLING */
 #user-page {
     font-family: 'Quantico', sans-serif;
     color: white;
-    padding: 12px;
+    padding: 24px;
     display: flex;
-    flex-direction: wrap;
+    flex-direction: row;
     justify-content: space-around;
     height: 600px;
     width: -webkit-fill-available;
@@ -122,9 +39,9 @@ body {
 #user-page div {
     flex-direction: column;
     display: flex;
-    width: 100px;
+    width: -webkit-fill-available;
     justify-content: flex-start;
-    align-self: center;
+    align-self: auto;
     align-items: center;
 
 }
@@ -160,6 +77,7 @@ body {
     font-size: 16px;
     font-family: 'Quantico', sans-serif;
 }
+
 #assets-page button {
     font-size: 20px;
     margin: 16px;
@@ -168,9 +86,9 @@ body {
     background-color: gray;
 }
 
-#assetsList a {
-    color: black;
-    position: relative;
+#assets-page a {
+    color: white;
+    text-decoration: none;
 }
 
 #update-asset-page {
@@ -210,23 +128,22 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 400px;
     align-items: center;
 }
 
 #create-asset-page {
     display: flex;
     justify-content: flex-start;
-    margin-top: 125px;
-
+    margin: 36px;
 }
 
 
 
 #new-form label {
-    color: rgb(163, 153, 153);
-    margin: auto;
-    padding: 1px 4px;
+    color: white;
+    margin: 4px;
+    padding: 2px;
     font-size: 24px;
 }
 
@@ -238,12 +155,6 @@ body {
 
 #new-form div input {
     height: 24px;
-}
-
-.form-group{
-    padding: 14px 12px;
-    justify-content:flex-end;
-    margin-left: auto;
 }
 
 #new-form #submit {
@@ -270,14 +181,26 @@ body {
     font-size: 16px;
     color: white;
     text-align: center;
-    background: rgb(81, 100, 64);
-    box-shadow: 0 15px 30px 0 rgb(47 54 65 / 10%);
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+.navbar img {
+    height: fit-content;
+    width: 48px;
+    float: right;
+    padding: 6px;
 }
 
-.container{
-        max-width: 1200px;
-        text-align: center;
-}
+.navbar h2 {
+    float: right;
+    color: white;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 16px;
+  }
 
   /* The subnavigation menu */
   .subnav {
