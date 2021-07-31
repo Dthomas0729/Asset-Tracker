@@ -44,7 +44,7 @@ h2 {
 }
 
 #logo {
-    margin-left: 18px;
+    margin-left: 24px;
     display: flex;
    
 }
@@ -56,8 +56,8 @@ h2 {
     display: flex;
     border:1px solid;
     border-radius: 4px;
-    height: 15%;
-    width: auto;
+    height: 10%;
+    width: 100%;
     padding-top: 0;
     
     
