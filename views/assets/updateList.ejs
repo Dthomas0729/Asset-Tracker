@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
-    <div id='assets-page'>
-      
-      <div id='companies'>
+<div id='assets-page'>
+    <div id='companies'>
 
         <h2>Companies</h2>
         <table>
@@ -17,7 +16,7 @@
                 <% if (asset.type === 'Company') { %>
               <tr>
                 <td><%= asset.nickname %></td>
-                <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
+                <td><a href='/assets/<%= asset._id %>/update'>Update</a></td>
   
               </tr>
                 <% } %>
@@ -41,7 +40,7 @@
                 <% if (asset.type === 'Property') { %>
               <tr>
                 <td><%= asset.nickname %></td>
-                <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
+                <td><a href='/assets/<%= asset._id %>/update'>Update</a></td>
   
               </tr>
                 <% } %>
@@ -64,7 +63,7 @@
                 <% if (asset.type === 'Stock') { %>
               <tr>
                 <td><%= asset.nickname %></td>
-                <td><a href='/assets/<%= asset._id %>/details'>Info</a></td>
+                <td><a href='/assets/<%= asset._id %>/update'>Update</a></td>
   
               </tr>
                 <% } %>
@@ -73,13 +72,6 @@
             </table>
       </div>
 
-          <!-- <button><a href='/assets/new'>New Asset</a></button> -->
-
-    </div>
-    
-        <button class='create'><a href='/assets/new'>Create Asset</a></button>
-   
-
-
+  </div>
 
 <%- include('../partials/footer') %>
