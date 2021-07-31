@@ -124,7 +124,7 @@ body {
 }
 
 /* CREATE ASSET PAGE */
-#new-form {
+#new-form, #company-form, #property-form, #stock-form {
     color: white;
     display: flex;
     flex-direction: column;
@@ -132,13 +132,41 @@ body {
     align-items: center;
 }
 
+#company-form, #property-form, #stock-form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: flex-start;
+}
+
+#company-form label, #property-form label, #stock-form label{
+  margin: 4px;
+  padding: 2px;
+  font-size: 24px;
+}
+
+#company-form div, #property-form div, #stock-form div {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#company-form #submit, #property-form #submit, #stock-form #submit {
+    font-size: 24px;
+    margin-top: 16px;
+    padding: 2px;
+    border-radius: 6px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
 #create-asset-page {
     display: flex;
     justify-content: flex-start;
     margin: 36px;
 }
-
-
 
 #new-form label {
     color: white;
