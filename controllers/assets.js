@@ -62,15 +62,39 @@ const updateAsset = (req, res) => {
 }
 
 
+const deleteList = (req, res) => {
+    User.find(req.user)
+        .populate("assets")
+        .exec((err, user) => {
+            Asset.find({user: req.user._id}, function (err, assets) {
+                res.render('assets/deleteList', {user: req.user, assets});
+                
+            })
+        })
+    };
+
 const deleteAsset = (req, res) => {
-    res.render('assets/delete', {user: req.user});
+
+    Asset.findByIdAndDelete(req.params.id, (err, asset) => {
+        if (err) {
+            console.log(err);
+            res.redirect('/assets');
+        } 
+        else {
+            console.log('Deleted : ', asset);
+            res.redirect('/assets/delete');
+        }
+    })
+
 }
 
 module.exports = {
     index,
     new: newAsset,
     create: createAsset,
-    updateForm: updateForm,
+    updateForm,
+    deleteList,
     update: updateAsset,
     delete: deleteAsset,
+    
 };
