@@ -94,11 +94,12 @@ const updateAsset = (req, res) => {
             price: req.body.price,
             income: req.body.income,
             expenses: req.body.expenses,
+            shares: req.body.shares,
             details: req.body.details,
-        }, (err) => {
+        }, (err, asset) => {
             if (err) return err
             else {
-                res.redirect('/assets')
+                res.redirect(`/assets/${asset._id}/details`);
             }
         });
 }
