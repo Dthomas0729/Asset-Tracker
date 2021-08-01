@@ -40,6 +40,6 @@ app.use('/home', userRouter);
 app.use('/assets', assetsRouter);
 
 
-app.listen(process.env.PORT || PORT, (err) => {
+app.listen(PORT, (err) => {
     console.log(`We Are Live!`);
 })
