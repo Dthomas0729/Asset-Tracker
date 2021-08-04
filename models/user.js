@@ -9,7 +9,9 @@ const userSchema = new Schema({
     googleId: String,
     avatarUrl: String,
     assets: [{type: Schema.Types.ObjectId, ref: 'Asset'}],
-    cashFlow: Number
+    income: {type: Number, default: 0},
+    expenses: {type: Number, default: 0},
+    cashFlow: {type: Number, default: 0},
 }, {
     timestamps: true
   }

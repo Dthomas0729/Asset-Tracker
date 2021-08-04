@@ -1,27 +1,49 @@
 <%- include('../partials/header') %>
 
 <div id='update-asset-page'>
-    <form id="update-form" href='/assets/<%= asset._id %>/update' method="POST">
+  <form id="update-form" href='/assets/<%= asset._id %>/update' method="POST">
         
+    <% if (asset.type === 'Company') { %>
+      <label>Name:</label>
+      <input type="text" name="nickname" value=<%= asset.nickname %>>
+          
+      <label>Price: </label>
+      <input type="text" name="price" value=<%= asset.price %>>    
+          
+      <label>Monthly Income: </label>
+      <input type="text" name="income" value=<%= asset.income %>>
+      
+      <label>Monthly Expenses: </label>
+      <input type="text" name="expenses" value=<%= asset.expenses %>>
+    <% } else if (asset.type === 'Property') { %>
+      <label>Address: </label>
+      <input type="text" name="nickname" value=<%= asset.nickname %>>
+          
+      <label>Price: </label>
+      <input type="text" name="price" value=<%= asset.price %>>    
+          
+      <label>Monthly Income: </label>
+      <input type="text" name="income" value=<%= asset.income %>>
+      
+      <label>Monthly Expenses: </label>
+      <input type="text" name="expenses" value=<%= asset.expenses %>>
+    <% } else if (asset.type === 'Stock') { %>
+      <label>Name: </label>
+      <input type="text" name="nickname" value=<%= asset.nickname %>>
+          
+      <label>Price: </label>
+      <input type="text" name="price" value=<%= asset.price %>>    
+          
+      <label>Shares: </label>
+      <input type="text" name="shares" value=<%= asset.shares %>>
+    <% } %>
 
-            <label>Name</label>
-            <input type="text" name="nickname" value=<%= asset.nickname %>>
-        
-            <label>Price</label>
-            <input type="text" name="price" value=<%= asset.price %>>    
-        
-            <label>Income</label>
-            <input type="text" name="income" value=<%= asset.income %>>
-        
-            <label>Expenses</label>
-            <input type="text" name="expenses" value=<%= asset.expenses %>>
-     
-            <label>Details</label>
-            <input type="text" name="details" value=<%= asset.details %>>    
+    <label>Details</label>
+    <input type="text" name="details" value=<%= asset.details %>>    
     
-        <input id='submit' type="submit" value="Update">
-      </form>
-
+    <input id='submit' type="submit" value="Update">
+  </form>
+  
 </div>
 
 <%- include('../partials/footer') %>

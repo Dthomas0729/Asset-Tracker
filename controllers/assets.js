@@ -8,6 +8,7 @@ function index(req, res) {
             Asset.find({
                 user:  req.user.id
             }, (err, assets) => {
+                
                 res.render('assets/index', {user: req.user, assets})
             })
         })
@@ -45,7 +46,6 @@ const createAsset = (req, res) => {
     let firstLetter = type.charAt(0).toUpperCase()
 
     type = firstLetter + type.slice(1, type.length);
-    console.log(type)
 
     const asset = new Asset({
         user: req.user,
@@ -59,12 +59,23 @@ const createAsset = (req, res) => {
     })
     console.log(asset);
 
-    asset.save(function(err) {
-        if (err) return err
-            else {
-                res.redirect('/assets');
-            }
+    User.findByIdAndUpdate(req.user.id, {
+        income: req.user.income + asset.income,
+        expenses: req.user.expenses + asset.expenses,
+        cashFlow: req.user.cashFlow + (asset.income - asset.expenses),
+        
+    }, () => {
+        console.log(req.user);
+
+        asset.save(function(err) {
+            if (err) return err
+                else {
+                    res.redirect('/home');
+                }
+        })
+
     })
+
 }
 
 const updateForm = (req, res) => {
@@ -87,22 +98,32 @@ const updateList = (req, res) => {
     };
 
 const updateAsset = (req, res) => {
-    Asset.findByIdAndUpdate(req.params.id, 
+
+    Asset.findByIdAndUpdate(
+        req.params.id, 
         {
             user: req.user,
             nickname: req.body.nickname,
             price: req.body.price,
             income: req.body.income,
             expenses: req.body.expenses,
+            shares: req.body.shares,
             details: req.body.details,
-        }, (err) => {
-            if (err) return err
-            else {
-                res.redirect('/assets')
-            }
-        });
-}
+        }, (err, asset) => {
 
+            User.findByIdAndUpdate(req.user.id, {
+                income: req.user.income + asset.income,
+                expenses: req.user.expenses + asset.expenses,
+                cashFlow: req.user.cashFlow + (asset.income - asset.expenses),
+                
+            }, (err) => {
+                if (err) return err
+                else {
+                    res.redirect(`/assets/${asset._id}/details`);
+                }
+            }
+        )}   
+    )}
 
 const deleteList = (req, res) => {
     User.find(req.user)
@@ -118,17 +139,23 @@ const deleteList = (req, res) => {
 const deleteAsset = (req, res) => {
 
     Asset.findByIdAndDelete(req.params.id, (err, asset) => {
-        if (err) {
-            console.log(err);
-            res.redirect('/assets');
-        } 
-        else {
-            console.log('Deleted : ', asset);
-            res.redirect('/assets/delete');
-        }
-    })
+        User.findByIdAndUpdate(req.user.id, {
+            income: req.user.income - asset.income,
+            expenses: req.user.expenses - asset.expenses,
+            cashFlow: req.user.cashFlow - (asset.income - asset.expenses),
+            
+        }, (err) => {
+            if (err) {
+                console.log(err);
+                res.redirect('/assets');
+            } else {
+                console.log('Deleted : ', asset);
+                res.redirect('/assets/delete');
+            }
+        })} 
+    )}
 
-}
+
 
 const deleteForm = (req, res) => {
 
