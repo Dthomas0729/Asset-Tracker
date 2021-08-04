@@ -22,7 +22,6 @@ passport.use(
                         email: profile.emails[0].value,
                         googleId: profile.id,
                         avatarUrl: profile.photos[0].value,
-                        cashFlow: 0,
                     });
                     newUser.save((err) => {
                         if (err) return cb(err);

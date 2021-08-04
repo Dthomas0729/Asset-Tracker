@@ -322,7 +322,7 @@ body {
   }
 
 #index-page {
-  margin: 36px;
+  margin: 48px;
   padding: 24px;
   color: white;
   font-family: 'Quantico', sans-serif;
@@ -334,7 +334,7 @@ body {
 }
 
 #delete-page {
-  margin: 36px;
+  margin: 48px;
   padding: 24px;
   color: white;
   font-family: 'Quantico', sans-serif;
@@ -363,7 +363,7 @@ body {
 }
  
 #details {
-  margin: 36px;
+  margin: 48px;
   padding: 24px;
   color: white;
   font-family: 'Quantico', sans-serif;
